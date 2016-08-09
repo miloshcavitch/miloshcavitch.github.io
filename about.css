@@ -4,11 +4,13 @@
 
 #about {
   opacity: 0;
+  -webkit-transition: opacity 2s;
   transition: opacity 2s;
 }
 
 body {
   background-color: gray;
+  -webkit-transition: background-color 2s;
   transition: background-color 2s;
 }
 
