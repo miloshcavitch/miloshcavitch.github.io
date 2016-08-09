@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link rel='stylesheet' href='style.css'>
+  </head>
+  <body>
+    <div id='doe'></div>
+    <script>
+    var canString = "<canvas id='myCanvas' width='" + $(document).width() + "' height='" + $(document).height() + "'></canvas>"
+    $('#doe').append(canString)
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext('2d');
+    var update = function(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      ctx.fillStyle = 'black';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      mouseSpeed.x = Math.abs(lastMouse.x - Emitter.x);
+      mouseSpeed.y = Math.abs(lastMouse.y - Emitter.y);
+      if (lastMouse.x > Emitter.x){
+        mouseSpeed.x = mouseSpeed.x * -1;
+      }
+      if (lastMouse.y > Emitter.x){
+        mouseSpeed.y = mouseSpeed.y * -1;
+      }
+
+      pRay.push(new Particle);
+      for (var i = 0; i < pRay.length; i++){
+        pRay[i].draw();
+        if (pRay[i].brightness <= 0){
+          pRay.splice(i, 1);
+        }
+      }
+      lastMouse.x = Emitter.x;
+      lastMouse.y = Emitter.y;
+    }
+    var mouseSpeed = {x: undefined, y: undefined};
+    var lastMouse = {x: undefined, y: undefined};
+    var gravity = 0.6;
+    var gravitySwitch = true;
+    var pRay = [];
+    var Emitter = {x: canvas.width/2, y: canvas.width/2};
+    var Particle = function(){
+      this.x = Emitter.x;
+      this.y = Emitter.y;
+      this.dx = ((Math.random() * 30) - 15);
+      this.dy = 15 - Math.abs(this.dx);
+      if (Math.random() >= 0.5){
+        this.dy = this.dy * -1;
+      }
+      if (mouseSpeed.x > 8 || mouseSpeed.x < -8 || mouseSpeed.y > 8 || mouseSpeed.y < -8){
+        this.dx = mouseSpeed.x/3.5;
+        this.dy = mouseSpeed.y/3.5;
+      }
+      this.color = Math.floor(Math.random() * 360);
+      this.size = (Math.random() * 10) + 2;
+      this.brightness = 50;
+
+      this.draw = function(){
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+        ctx.fillStyle = "hsl(" + this.color + ", 100%, " + this.brightness + "%)";
+        ctx.fill();
+        ctx.closePath();
+
+        if (this.size <= 30){
+          this.size += 0.5;
+        }
+        this.x += this.dx;
+        this.y += this.dy;
+        this.dy += gravity;
+        if ((this.y >= canvas.height - this.size && this.dy > 0) || (this.y <= this.size && this.dy < 0) ){
+          this.dy = this.dy * -0.7;
+        }
+        if ((this.x >= canvas.width - this.size && this.dx > 0) || (this.x <= this.size && this.dx < 0)){
+          this.dx = this.dx * -1;
+        }
+        this.brightness -= 1.2;
+        if (this.brightness <= 0){
+          delete this;
+        }
+        this.color += 12;
+        if (this.color >= 360){
+          this.color = this.color - 360;
+        }
+      }
+    }
+    $(document).on("mousemove", function(event){
+      Emitter.x = event.clientX;
+      Emitter.y = event.clientY;
+    });
+    $('#myCanvas').click(function(){
+      gravitySwitch = !gravitySwitch;
+      if (gravitySwitch === true){
+        gravity = 0.4;
+      } else {
+        gravity = 0;
+      }
+    });
+    $(document).on('scroll', function(event){
+      console.log(event);
+    });
+    setInterval(update, 25);
+    </script>
+  </body>
+</html>

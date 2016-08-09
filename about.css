@@ -1,0 +1,36 @@
+#about{
+  width: 50%;
+}
+
+#about {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+body {
+  background-color: gray;
+  transition: background-color 2s;
+}
+
+p {
+  margin-left: 20px;
+}
+nav ul li p {
+  margin-left: 0px;
+}
+@media only screen and (max-width: 682px){
+  #about {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 520px){
+  p {
+    margin-left: 0px;
+  }
+  #about {
+    width: 100%;
+    margin-top: 60px;
+    font-size: .9em;
+
+  }
+}

@@ -1,0 +1,153 @@
+body {
+  background-color: #aaaaaa;
+  font-family: "Lucida Console", Monaco, monospace;
+  border: 1px solid black;
+}
+#shapesCollection {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 70%;
+  float: left;
+}
+
+#obj-source{
+  position: fixed;
+  display: none;
+  opacity: 0;
+  height: 100%;
+  width: 50%;
+  color: white;
+  background-color: black;
+  font-size: 8px;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  overflow: scroll;
+  transition: opacity 1s;
+}
+
+#exit-source {
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+}
+#move-centerpoint-info{
+  display: none;
+  width: 100%;
+  font-size: 10px;
+}
+.symmetry-toggle{
+  float: right;
+}
+
+.clearFix:after {
+    content:"";
+    clear:both;
+    display:block;
+}
+.objButton {
+  float: right;
+  height: auto;
+}
+
+.alphaSlide {
+  float: right;
+  height: auto;
+  width: 104px;
+}
+.colorList {
+  float: right;
+  height: auto;
+}
+.circle-line-toggle {
+  margin-left: 30px;
+}
+.curve-convert {
+  margin-right: 20px;
+  float:right;
+}
+#appBox {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#colorsCollection{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  width: 20%;
+}
+
+#colorsCollection li {
+  border-color: #999999;
+  border: 1px;
+  margin: 0 3px 3px 3px;
+  padding: 0.4em;
+  padding-right: 1.5em;
+  font-size: 1em;
+  background-color: #777777;
+}
+#colorsCollection span {
+  position: absolute;
+  margin-right: -1.3em;
+}
+#colorsCollection ul {
+  margin-top: 3px;
+}
+.sp-light{
+  float: right;
+}
+
+#shapesCollection li {
+  margin: 0 3px 3px 3px;
+  padding: 0.4em;
+  padding-left: 1.5em;
+  font-size: 1em;
+  background-color: #777777;
+}
+#shapesCollection span {
+  position: absolute;
+  margin-left: -1.3em;
+}
+
+#shapesCollection ul {
+  margin-top: 3px;
+}
+
+#error {
+  color: #FF0000;
+}
+
+#currentInstructions {
+  color: #eeeeee;
+}
+
+.selected {
+  background-color: green;
+}
+
+#handle-tolerance{
+  margin-top: -10px;
+}
+#grid-size{
+  margin-top: -10px;
+}
+#side-nav{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  float: right;
+  background-color: red;
+}
+
+#o-tog {
+  float: right;
+}
