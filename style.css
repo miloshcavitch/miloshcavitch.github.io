@@ -223,6 +223,9 @@ nav ul li p, #Mnav ul li p{
 }
 
 @media only screen and (max-width: 520px){
+  body {
+    font-family: "Courier New", Courier, monospace
+  }
   nav {
     display: none;
   }
