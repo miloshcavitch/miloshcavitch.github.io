@@ -11,6 +11,7 @@ $(document).ready(function(){
   setTimeout(function(){
     $('#about').css('opacity', '1');
   }, 1100);
+  testWindowSize();
 });
 var shade = {sat: 0, light: 100, frame: 0};
 
