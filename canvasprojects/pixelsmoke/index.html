@@ -44,18 +44,21 @@
       }
       var WASDBool = {w:false, a:false, s:false, d:false};
       $(document).on('keydown', function(event){
-        console.log(event);
         switch (event.keyCode){
           case 87:
+          case 38:
             WASDBool.w = true;
             break;
           case 65:
+          case 37:
             WASDBool.a = true;
             break;
           case 83:
+          case 40:
             WASDBool.s = true;
             break;
           case 68:
+          case 39:
             WASDBool.d = true;
             break;
         }

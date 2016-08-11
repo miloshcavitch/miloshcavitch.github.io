@@ -3,8 +3,22 @@ var topCanvas = document.getElementById('bubbles-canvas');
 var topctx = topCanvas.getContext('2d');
 var backCanvas = document.getElementById('back-canvas');
 var backCTX = backCanvas.getContext('2d');
-topCanvas.width = window.innerWidth;
-topCanvas.height = window.innerHeight;
+
+var screenWidth;
+var screenHeight;
+if (window.screen.availWidth <= 414){
+  screenWidth = window.screen.availWidth;
+} else {
+  screenWidth = window.innerHeight;
+}
+if (window.screen.availHeight <= 736){
+  screenHeight = window.screen.availHeight;
+} else {
+  screenHeight = window.innerHeight;
+}
+
+topCanvas.width = screenWidth;
+topCanvas.height = screenHeight;
 var transitionTime = 30;
 var oppositeCornerDX = -0.2;
 var oppositeCornerDY = -0.2;
@@ -44,7 +58,7 @@ var topParticle = function(){
   this.maxSize = false;
   this.minAlpha = false;
 }
-var unit = window.innerWidth/1600;
+var unit = screenWidth/1600;
 
 var Bubble = function(){
   this.size = Math.random() * 40 + 3;
@@ -129,14 +143,24 @@ var updateTopParticles = function(){
 }
 
 var testWindowSize = function(){
-  if (topCanvas.width != window.innerWidth){
-    topCanvas.width = window.innerWidth;
+  if (window.screen.availWidth <= 414){
+    screenWidth = window.screen.availWidth;
+  } else {
+    screenWidth = window.innerWidth;
+  }
+  if (window.screen.availHeight <= 736){
+    screenHeight = window.screen.availHeight;
+  } else {
+    screenHeight = window.innerHeight;
+  }
+  if (topCanvas.width != screenWidth){
+    topCanvas.width = screenWidth;
     topEmitter.x = topCanvas.width + 100;
-    unit = window.innerWidth/1600
+    unit = screenWidth/1600
     updateBounds();
   }
-  if (topCanvas.height != window.innerHeight){
-    topCanvas.height = window.innerHeight;
+  if (topCanvas.height != screenHeight){
+    topCanvas.height = screenHeight;
     topEmitter.y = topCanvas.height + 30;
     updateBounds();
   }
@@ -145,8 +169,8 @@ var testWindowSize = function(){
 ////////////////////////////////
 //Window Circles
 var windowCircles = [];
-var windowBounds = {xLeft: window.innerWidth/4, xRight: window.innerWidth - window.innerWidth/4,
-                    yTop: window.innerHeight/4, yBottom: window.innerHeight- window.innerHeight/4};
+var windowBounds = {xLeft: screenWidth/4, xRight: screenWidth - screenWidth/4,
+                    yTop: screenHeight/4, yBottom: screenHeight- screenHeight/4};
 var desiredCircleArea;
 var updateBounds = function(){
   var lastWidth = windowBounds.xRight - windowBounds.xLeft;
@@ -317,8 +341,8 @@ var checkFrame = function(){
   }
   if (windowState === 'shrink' && tweenCount >= transitionTime){
     updateFunc();
-    mouse.x = window.innerWidth/2;
-    mouse.y = window.innerHeight/2;
+    mouse.x = screenWidth/2;
+    mouse.y = screenHeight/2;
     //console.log('grow!')
     windowState = 'grow';
     tweenCount = 0;
@@ -346,7 +370,7 @@ var updateTopCanvas = function(){
     }
   }
   topctx.fillStyle = "hsl(0, 0%, " + shade + "%)"//'gray';
-  topctx.fillRect(0,0,window.innerWidth,window.innerHeight);
+  topctx.fillRect(0,0,screenWidth,screenHeight);
   updateTopParticles();
 
 

@@ -1,12 +1,19 @@
-<form id="contactform" method="POST">
-    <input type="text" name="name" placeholder="Your name">
-    <input type="email" name="_replyto" placeholder="Your email">
-    <input type="hidden" name="_subject" value="Website contact" />
-    <textarea name="message" placeholder="Your message"></textarea>
-    <input type="text" name="_gotcha" style="display:none" />
-    <input type="submit" value="Send">
+<form action='/emails' method='post'>
+  <div>
+    <label for='name'>Your Name:</label>
+    <input type='text' id='name' name='user_name' />
+  </div>
+
+  <div>
+    <label for='email'>Your Email:</label>
+    <input type='text' id='email' name='user_email' />
+  </div>
+
+  <div>
+    <label for='message'>Message:</label>
+    <input type='text' id='message' height: '420px' name='user_message' />
+  </div>
+  <div class="button">
+  <button type="submit">Send</button>
+  </div>
 </form>
-<script>
-    var contactform =  document.getElementById('contactform');
-    contactform.setAttribute('action', '//formspree.io/' + 'your' + '@' + 'email' + '.' + 'com');
-</script>
