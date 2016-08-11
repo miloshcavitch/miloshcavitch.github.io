@@ -11,6 +11,8 @@ $(document).ready(function(){
   setTimeout(function(){
     $('#about').css('opacity', '1');
   }, 1100);
+  document.body.style.zoom = 1.25;//this is for iphone compatibility
+  document.body.style.zoom = 1.0;
   testWindowSize();
 });
 var shade = {sat: 0, light: 100, frame: 0};
