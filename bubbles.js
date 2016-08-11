@@ -7,12 +7,12 @@ var backCTX = backCanvas.getContext('2d');
 var screenWidth;
 var screenHeight;
 if (window.screen.availWidth <= 414){
-  screenWidth = window.screen.availWidth;
+  screenWidth = window.innerWidth;
 } else {
-  screenWidth = window.innerHeight;
+  screenWidth = window.innerWidth;
 }
 if (window.screen.availHeight <= 736){
-  screenHeight = window.screen.availHeight;
+  screenHeight = window.innerHeight;
 } else {
   screenHeight = window.innerHeight;
 }
@@ -144,12 +144,12 @@ var updateTopParticles = function(){
 
 var testWindowSize = function(){
   if (window.screen.availWidth <= 414){
-    screenWidth = window.screen.availWidth;
+    screenWidth = window.innerWidth;
   } else {
     screenWidth = window.innerWidth;
   }
   if (window.screen.availHeight <= 736){
-    screenHeight = window.screen.availHeight;
+    screenHeight = window.innerHeight;
   } else {
     screenHeight = window.innerHeight;
   }
