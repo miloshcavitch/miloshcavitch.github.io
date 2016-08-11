@@ -3,7 +3,7 @@ var ctx = canvas.getContext('2d');
 
 
 var bubbleFrame = 0;
-canvas.width = window.innerWidth;
+canvas.width = window.innerWidth + 100;
 canvas.height = window.innerHeight;
 var unit = canvas.width/1600;
 $(document).ready(function(){
