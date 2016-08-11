@@ -70,6 +70,10 @@ nav ul li p, #Mnav ul li p{
   right: 0px;
   cursor: pointer;
 }
+.my-email {
+  margin-left: 40px;
+
+}
 #Mnav{
   display: none;
   position: fixed;

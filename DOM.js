@@ -26,7 +26,7 @@ $('.links').click(function(event){
     case 'CONTACT':
     isContactShowing = !isContactShowing;
       if (isContactShowing){
-        $('#contact-form').css('top', '80%');
+        $('#contact-form').css('top', '60%');
       } else {
         $('#contact-form').css('top', '110%');
       }
