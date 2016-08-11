@@ -8,13 +8,16 @@
       var canvas = document.getElementById('myCanvas');
       var ctx = canvas.getContext('2d');
 
-var logoHUE = {colorArray: ['#000000'], symmetryLine: 0, xCenter: 677.5, yCenter: 250, width: 276, height: 162, rotation: 0, shapes: [
-{symmetryBool: false, color: 0, globalAlpha: 1, type: 'polyline',lineWidth: 0.0318840579710145, positions: [
+      var logoHUE = {colorArray: ['#000000'], symmetryLine: 0, xCenter: 677.5, yCenter: 250, width: 213, height: 241, rotation: 0, shapes: [
+{symmetryBool: false, color: 0, globalAlpha: 1, type: 'circle',radius : 0.16276935045408183, line: true, lineWidth: 0.01455399061032864, positions: [
 
-{x: -1.5742753623188406, y: 0.2716049382716049},
-{x: -1.0307971014492754, y: -0.7283950617283951},
-{x: -0.5742753623188406, y: -0.18518518518518517},
-]}
+{x: -1.8990610328638498, y: 0.14107883817427386}]},
+{symmetryBool: false, color: 0, globalAlpha: 1, type: 'circle',radius : 0.46047698911696633, line: true, lineWidth: 0.03474178403755869, positions: [
+
+{x: -1.1901408450704225, y: 0.12033195020746888}]},
+{symmetryBool: false, color: 0, globalAlpha: 1, type: 'circle',radius : 0.14006041211433143, line: true, lineWidth: 0.07511737089201878, positions: [
+
+{x: -1.607981220657277, y: 0.8049792531120332}]}
 ]}
       var renderPseudoSprite = function(object, context){
         context.translate(object.xCenter, object.yCenter);
@@ -75,6 +78,7 @@ var logoHUE = {colorArray: ['#000000'], symmetryLine: 0, xCenter: 677.5, yCenter
         context.arc( (shape.positions[0].x * object.width), (object.height * shape.positions[0].y), (shape.radius * object.width), 0, Math.PI * 2);
         context.globalAlpha = shape.globalAlpha;
         if (shape.line === true){
+          context.lineWidth = shape.lineWidth * object.width;
           context.strokeStyle = object.colorArray[shape.color];
           context.stroke();
         } else {

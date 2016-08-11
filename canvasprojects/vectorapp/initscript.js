@@ -58,7 +58,7 @@ var initDrawingApp = function(){
   initColorLayers();
   initSortableLayers();
   $('#currentForm').append("<form id='newPolyForm'>Polygon Name:<br><input type='text'name='polygonName'></form><button type='button' id='submitPolyName'>Enter Poly Name</button>");
-  $('#currentForm').append("<form id='newHexColor'>Variable Name:<br><input type='text' name='colorVarName'></form><button type='button' id='submitColorVar'>Enter Hex Color</button>");
+  $('#currentForm').append("<form id='newHexColor'>Variable Name:<br><input type='text' name='colorVarName'></form><button type='button' id='submitColorVar'>Enter Name</button>");
   $('#currentForm').append("<button type='button' id='finishAddingPoints'>Finish Adding Points</button>");
   $('#currentForm').append("<button type='button' id='finishMovingPoints'>Finish Moving Points</button>");
   $('#currentForm').append("<form id='newLineForm'>Line Name:<br><input type='text' name='polylineName'></form><button type='button' id='submitLineName'>Submit (Poly)line Name</button>");
@@ -126,7 +126,7 @@ var initDrawingApp = function(){
     $('#finishAddingPoints').show(500);
   });
   $('#newColorVar').click(function(){
-    $('#currentInstructions').text("Enter the name of your color variable and it's hex value");
+    $('#currentInstructions').text("Enter the name of your color variable");
     $('#currentInstructions').show(500);
     $('#newHexColor').show(500);
     $('#submitColorVar').show(500);
