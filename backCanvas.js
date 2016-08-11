@@ -13,3 +13,5 @@ var updateBackCanvas = function(){
   backCTX.clearRect(0,0,backCanvas.width,backCanvas.height);
   activeBack();//run active background project;
 }
+
+updateBounds();

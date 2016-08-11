@@ -26,7 +26,7 @@ var testWindowSize = function(){
   }
 }
 
-
+testWindowSize();
 $('.links').click(function(event){
   //document.location.href = 'about.html'
   console.log(event.target.innerHTML);
