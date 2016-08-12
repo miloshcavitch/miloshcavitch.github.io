@@ -281,9 +281,10 @@ objectSnapSetup = function(){
 }
 
 $(document).ready(function(){
-  $('#textInfo').append("<p>Enter the width and height of the desired canvas size<br>(size of your object can be changed later by changing 'pseudoSprite.unit' but the center of your canvas will be the referenced center position of your pseudoSprite.)</p>");
+  $('#textInfo').append("<p>Enter the width and height of the desired canvas size<br></p>");
   $('#textInfo').append("<form>Width:<br><input type='text' name='canWidth'><br> Height:<br><input type='text' name='canHeight'></form>");//init canvas
   $('#textInfo').append("<br><button type='button' id='setCanvas'>Create Canvas</button>");
+  $('#textInfo').append("<br><p class='rojo'> Only Google Chrome is Supported, others may work but no promises!</p>")
 
   $('#setCanvas').click(function(){
     var cW = $("input[name='canWidth']").val();

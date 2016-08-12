@@ -288,6 +288,29 @@ var PC = function(){
           enemy.verticalMomentum += milo.verticalMomentum * 1/4;
           milo.horizontalMomentum *= -1;
           milo.verticalMomentum *= -1;
+          milo.health -= 0.2;
+          if (milo.health < 0){
+            milo.health = 0;
+            explosions.push(new Explosion(milo.x, milo.y, milo.color))
+            game.lives -= 1;
+            //explosion animation;
+            //start respawn;
+            if (game.lives < 0){
+              activeMode = function(){
+                consistentUpdate();
+                preGameOver();
+              }
+            } else {
+              activeMode = function(){
+                consistentUpdate();
+                startRespawn();
+              }
+            }
+            milo = new PC();
+            screenBlinks.new(100);
+          } else {
+            screenBlinks.new(10);
+          }
           //milo.x += milo.horizontalMomentum;
           //milo.y += milo.verticalMomentum;
         }
