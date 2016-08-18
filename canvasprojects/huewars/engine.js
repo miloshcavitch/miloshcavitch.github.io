@@ -29,9 +29,6 @@ var returnKeyFunction = function(){
     level();
   }
   returnKeyFunction = function(){
-    activeMode = function(){
-      titleScreen();
-    }
   }
   game.currentClick = 1;
   activeClick = function(){
