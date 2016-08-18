@@ -20,9 +20,16 @@ p {
 nav ul li p {
   margin-left: 0px;
 }
+#skills{
+  width: 50%;
+  float: right;
+}
 @media only screen and (max-width: 682px){
   #about {
     width: 75%;
+  }
+  #skills {
+    float: none;
   }
 }
 @media only screen and (max-width: 520px){

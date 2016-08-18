@@ -8,7 +8,11 @@
   </head>
   <body>
     <canvas id='myCanvas'></canvas>
+    <p id='arrow-key-instruction'>Use Arrow keys or WASD to move the trail</p>
     <script>
+      $(document).ready(function(){
+        //$('#arrow-key-instruction').css('display', '0');
+      });
       var canvas = document.getElementById('myCanvas');
       var ctx = canvas.getContext('2d');
       canvas.width = window.innerWidth;
@@ -63,7 +67,7 @@
             WASDBool.d = true;
             break;
         }
-        console.log(WASDBool);
+        //console.log(WASDBool);
       });
       $(document).on('keyup', function(event){
         switch (event.keyCode){
@@ -118,7 +122,7 @@
         } else {
           this.speed = 0.04;
         }
-        console.log(this.speed);
+      //  console.log(this.speed);
         this.opacity = 0.7;
         this.draw = function(){
           this.x += this.dx;

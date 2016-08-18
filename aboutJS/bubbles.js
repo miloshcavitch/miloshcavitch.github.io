@@ -30,29 +30,7 @@ var testWindowSize = function(){
 }
 
 testWindowSize();
-$('.links').click(function(event){
-  //document.location.href = 'about.html'
-  console.log(event.target.innerHTML);
-  var linkBool = false;
-  var link = ''
-  switch (event.target.innerHTML){
-    case 'ABOUT':
-      link = 'about.html';
-      linkBool = true;
-      break;
-    case 'PORTFOLIO':
-      link = 'index.html';
-      linkBool = true;
-      break;
-    case 'CONTACT':
-      linkBool = true;
-      break;
-  }
-  if (linkBool){
-    window.name = JSON.stringify(bubbles);
-    document.location.href = link;
-  }
-});
+
 
 
 var updateBubbles = function(){
