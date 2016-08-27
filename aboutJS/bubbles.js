@@ -11,6 +11,9 @@ $(document).ready(function(){
   setTimeout(function(){
     $('#about').css('opacity', '1');
   }, 1100);
+  setTimeout(function(){
+    $('#skills').css('opacity', '1');
+  }, 2000);
   document.body.style.zoom = 1.25;//this is for iphone compatibility
   document.body.style.zoom = 1.0;
   testWindowSize();

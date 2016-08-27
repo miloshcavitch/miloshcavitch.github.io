@@ -26,6 +26,9 @@ nav ul li p {
   right: 10px;
   width: 50%;
   float: right;
+  opacity: 0;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
 }
 #skills p {
   text-align: center;
