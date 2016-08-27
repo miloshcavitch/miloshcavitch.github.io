@@ -21,8 +21,19 @@ nav ul li p {
   margin-left: 0px;
 }
 #skills{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   width: 50%;
   float: right;
+}
+#skills p {
+  text-align: center;
+}
+
+#skills ul li {
+  float: left;
+  margin-left: 20px;
 }
 @media only screen and (max-width: 682px){
   #about {
@@ -33,6 +44,16 @@ nav ul li p {
   }
 }
 @media only screen and (max-width: 520px){
+  #skills {
+    margin-top: 40px;
+    position: static;
+  }
+  #skills p {
+    text-align: left;
+  }
+  #skills ul li {
+    float: none;
+  }
   p {
     margin-left: 0px;
   }

@@ -333,7 +333,7 @@ var checkFrame = function(){
     tweenCount = 0;
     //color alpha switch-over;
   }
-  if (windowState === 'mid' && tweenCount >= 200){
+  if (windowState === 'mid' && tweenCount >= 600){
     //console.log('SHRINK!');
     windowState = 'shrink';
     tweenCount = 0;
