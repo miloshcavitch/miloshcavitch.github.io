@@ -50,12 +50,12 @@ $('.project-title').click(function(event){
   }
   document.location.href = projectsRay[titleIndex].link;
 });
-  var projectsRay = [{name: "HUE WARS", description: "A space-shooter where you have to match the color of your ship/gun to the color of your target in order to kill it. WIP", link: "canvasprojects/huewars/index.html", func: function(){updateStars()}},
-                {name: "FUNFETTI", description: "Particle system test using color changing circles, gravity and wall and floor collisions.", link: "canvasprojects/funfetti/index.html", func: function(){updateFetti()}},
-                {name: "PIXEL TRAIL", description: "If the early 90's had particle physics, this is what it would look like.", link: "canvasprojects/pixelsmoke/index.html", func: function(){updateSmoke()}},
-                {name: "WOBBLE WINDOW", description: "An interactive see-through circle that has physics applied to it to create a wobbly water balloon effect.", link: 'canvasprojects/wobblewindow/index.html', func: function(){updateWobble()}},
-                {name: "VECTOR DRAWING APP", description: "A vector drawing program that turns drawings into code, that can be used in an HTML canvas.", link: 'canvasprojects/vectorapp/index.html', func: function(){updateDrawingApp()}}];
-
+var projectsRay = [
+              {name: "WOBBLE WINDOW", description: "An interactive see-through circle that has physics applied to it to create a wobbly water balloon effect.", link: 'canvasprojects/wobblewindow/index.html', func: function(){updateWobble()}},
+              {name: "PIXEL TRAIL", description: "If the early 90's had particle physics, this is what it would look like. Move the trail by using the arrow keys or WASD", link: "canvasprojects/pixelsmoke/index.html", func: function(){updateSmoke()}},
+              {name: "HUE WARS", description: "A space-shooter where you have to match the color of your ship/gun (done by scrolling) to the color of your target in order to kill it. WIP", link: "canvasprojects/huewars/index.html", func: function(){updateStars()}},
+              {name: "FUNFETTI", description: "Particle system test using color changing circles, gravity and wall and floor collisions.", link: "canvasprojects/funfetti/index.html", func: function(){updateFetti()}},
+              {name: "VECTOR DRAWING APP", description: "A vector drawing program that turns drawings into code, that can be used in an HTML canvas.", link: 'canvasprojects/vectorapp/index.html', func: function(){updateDrawingApp()}}];
 
 
 var updateFunc = function(){
@@ -68,6 +68,12 @@ if (window.name.length < 5 && window.name != ''){
   projectIndex = titleIndex;
   updateFunc();
 }
+var projectsRay = [
+              {name: "WOBBLE WINDOW", description: "An interactive see-through circle that has physics applied to it to create a wobbly water balloon effect.", link: 'canvasprojects/wobblewindow/index.html', func: function(){updateWobble()}},
+              {name: "PIXEL TRAIL", description: "If the early 90's had particle physics, this is what it would look like.", link: "canvasprojects/pixelsmoke/index.html", func: function(){updateSmoke()}},
+              {name: "HUE WARS", description: "A space-shooter where you have to match the color of your ship/gun to the color of your target in order to kill it. WIP", link: "canvasprojects/huewars/index.html", func: function(){updateStars()}},
+              {name: "FUNFETTI", description: "Particle system test using color changing circles, gravity and wall and floor collisions.", link: "canvasprojects/funfetti/index.html", func: function(){updateFetti()}},
+              {name: "VECTOR DRAWING APP", description: "A vector drawing program that turns drawings into code, that can be used in an HTML canvas.", link: 'canvasprojects/vectorapp/index.html', func: function(){updateDrawingApp()}}];
 if (titleIndex === NaN){
   titleIndex = 0;
 }
@@ -95,7 +101,7 @@ var updateLink = function(){
   $(inToT).empty();
   $(inToD).empty();
   $(inToT).append("<p href='" + projectsRay[titleIndex].link + "' <h2>" + projectsRay[titleIndex].name + "</h2></p>");
-  console.log("updateProject: " + titleIndex);
+  //console.log("updateProject: " + titleIndex);
   $(inToD).append("<p>" + projectsRay[titleIndex].description + "</p>");
   $(outOfT).css('left', '150%');
   $(outOfD).css('left', '-150%');

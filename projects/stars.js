@@ -80,7 +80,7 @@ function updateStars(){
   starLayers.forEach(LayerTraverse);
 }
 var activeBack = function(){
-  updateStars();
+  updateWobble();
 }
 
 for (var i = 0; i < 600; i++){
